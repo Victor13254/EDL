@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Crear grafo con Vis.js</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript"
+      src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  </head>
+  <body>
+    <div id="zzz" style="float:right;margin-right: 15%;">
+      <div>
+        <label></label><label></label><label></label><label></label>
+        <label style="width: 100%;">Añadir/ Eliminar nodos</label>
+        <label></label><label></label><label></label><label></label>
+        <label for="nombreNodo">Nombre:</label>
+        <input type="text" id="nombreNodo">
+        <label for="duracionNodo">Duración:</label>
+        <input type="text" id="duracionNodo">
+        <label for="costoNodo">Costo:</label>
+        <input type="text" id="costoNodo">
+        <button onclick="agregarNodo()">Agregar nodo</button>
+        <button onclick="eliminarNodo()">Eliminar nodo</button>
+      </div>
+      <div>
+        <label></label><label></label><label></label><label></label>
+        <label>------------</label>
+        <label>------------</label>
+        <label>------------</label>
+        <label>------------</label>
+        <label></label><label></label><label></label><label></label>
+        <label style="width: 100%;">Agregar enlaces</label>
+        <label></label><label></label><label></label><label></label>
+    </div>
+      <div>
+        <label for="nodoOrigen">Origen: </label>
+        <select id="nodoOrigen"></select>
+        <label for="nodoDestino">Destino:</label>
+        <select id="nodoDestino"></select>
+        <label></label>
+        <label for="nodoTiempo">Tiempo:</label>
+        <input type="text" id="nodoTiempo">
+        <button onclick="agregarEnlace()">Agregar enlace</button>
+      </div>
+      <div>
+        <label></label><label></label><label></label><label></label>
+        <label>------------</label>
+        <label>------------</label>
+        <label>------------</label>
+        <label>------------</label>
+        <label></label><label></label><label></label><label></label>
+        <label style="width: 100%;">Eliminar enlaces</label>
+        <label></label><label></label><label></label><label></label>
+    </div>
+      <div>
+        <select id="enlaces" onchange="actualizarCamposEnlace()">
+          <option value="">Seleccione un enlace</option>
+        </select>
+        <button onclick="eliminarEnlace()">Eliminar enlace</button>
+      </div><div>
+        <label></label><label></label><label></label><label></label>
+        <label>------------</label>
+        <label>------------</label>
+        <label>------------</label>
+        <label>------------</label>
+        <label></label><label></label><label></label><label></label>
+        <label style="width: 100%;">Guardar nodo</label>
+        <label></label><label></label><label></label><label></label>
+    </div>
+      <div>
+        <button onclick="save()">Save enlace</button>
+      </div><div>
+        <label></label><label></label><label></label><label></label>
+        <label>------------</label>
+        <label>------------</label>
+        <label>------------</label>
+        <label>------------</label>
+        <label></label><label></label><label></label><label></label>
+        <label style="width: 100%;">Cargar nodo</label>
+        <label></label><label></label><label></label><label></label>
+    </div>
+      <div>
+        <button onclick="cargar()">cargar enlace</button>
+      </div>
+      <div>
+        <label></label><label></label><label></label><label></label>
+        <label>------------</label>
+        <label>------------</label>
+        <label>------------</label>
+        <label>------------</label>
+        <label></label><label></label><label></label><label></label>
+        <label style="width: 100%;">Kruskal</label>
+        <label></label><label></label><label></label><label></label>
+      </div>
+      <div>
+        <button onclick="kruskalMST()">Dibujar</button>
+      </div>
+      <div>
+        <label></label><label></label><label></label><label></label>
+        <label>------------</label>
+        <label>------------</label>
+        <label>------------</label>
+        <label>------------</label>
+        <label></label><label></label><label></label><label></label>
+        <label style="width: 100%;">Matriz adyacencia</label>
+        <label></label><label></label><label></label><label></label>
+      </div>
+      <div>
+        <button onclick="MatrizA()">Crear Matriz A</button>
+      </div>
+      <div>
+        <label></label><label></label><label></label><label></label>
+        <label>------------</label>
+        <label>------------</label>
+        <label>------------</label>
+        <label>------------</label>
+        <label></label><label></label><label></label><label></label>
+        <label style="width: 100%;">Matriz Incidencia </label>
+        <label></label><label></label><label></label><label></label>
+      </div>
+      <div>
+        <button onclick="MatrizI()">Crear Matriz I</button>
+      </div>
+      <div>
+        <label></label><label></label><label></label><label></label>
+        <label>------------</label>
+        <label>------------</label>
+        <label>------------</label>
+        <label>------------</label>
+        <label></label><label></label><label></label><label></label>
+        <label style="width: 100%;">Ruta Critica</label>
+        <label></label><label></label><label></label><label></label>
+      </div>
+      <div>
+        <button onclick="Ruta()">Dibujar</button>
+      </div>
+
+    </div>
+
+
+    <div id="mynetwork"style="float:left; margin-top: 3ic; margin-left:5ic"></div>
+    <script src="base.js"></script>
+    <script src="carga.js"></script>
+    <script src="Krunk.js"></script>
+    <script src="Adyase.js"></script>
+    <script src="Incide.js"></script>
+    <script src="Ruta.js"></script>
+
+  </body>
+
+</html>
