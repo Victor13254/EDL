@@ -67,10 +67,12 @@ function dijkstra() {
     }
 
     // Devolver el resultado como un objeto
-    Dj ={
+    let Dj ={
         distance: distances[end],
             path: path
     };
+
+    document.querySelector('#Label1').innerText = 'La distancia es:'+ Dj.distance + ' La ruta es: '+ Dj.path;
 
     pintaris(path);
     console.log(Dj);

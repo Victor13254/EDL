@@ -12,6 +12,13 @@
     margin:auto;
     background-color:#ccc;
 }
+#sss{
+    width:300px;
+    padding:16px;
+    border-radius:10px;
+    margin:auto;
+    background-color:#ccc;
+}
 
 label{
     width:72px;

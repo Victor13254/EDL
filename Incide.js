@@ -32,4 +32,49 @@ function MatrizI() {
     }
 
     console.table(incidenceMatrix);
+    addTables(incidenceMatrix);
 }
+function addTables(incidenceMatrix) {
+    const matriz = incidenceMatrix;
+    const myTableDiv = document.getElementById("matric_results")
+    const table = document.createElement('TABLE')
+    const tableBody = document.createElement('TBODY')
+
+    table.border = '1'
+    table.appendChild(tableBody);
+
+    let heading = new Array();
+    let stock = new Array();
+
+    for (x=0;x<matriz.length;x++) {
+        heading.push(x);
+    }
+    for (x=0;x<matriz.length;x++) {
+        for (y=0;y<matriz.length;y++) {
+            stock[y] = new Array(matriz[x]);
+        }
+    }
+//COLUMNAS DE LA TABLA
+    var tr = document.createElement('TR');
+    tableBody.appendChild(tr);
+    for (i = 0; i < heading.length; i++) {
+        var th = document.createElement('TH')
+        th.width = '75';
+        th.appendChild(document.createTextNode(heading[i]));
+        tr.appendChild(th);
+    }
+
+//FILAS DE LA TABLA
+    for (i = 0; i < stock.length; i++) {
+        var tr = document.createElement('TR');
+        console.log(i,stock);
+        for (j = 0; j < stock[i].length; j++) {
+            var td = document.createElement('TD')
+            td.appendChild(document.createTextNode(stock[i][j]));
+            tr.appendChild(td)
+        }
+        tableBody.appendChild(tr);
+    }
+    myTableDiv.appendChild(table)
+}
+
