@@ -58,7 +58,7 @@ function Ruta() {
     rutaCritica.push(final);
 
 
-    const lista = recorrido(nodos,rutaCritica.id);
+    const lista = recorrido(nodos,rutaCritica);
 
     console.log(tiempoFinal);
     console.log(rutaCritica);
@@ -66,23 +66,12 @@ function Ruta() {
 }
 function recorrido(nodos,rutaCritica){
 
-
-    const graph = { nodes: data.nodes.get(), edges: data.edges.get() };
-    const edges = graph.edges
-    const nodes = graph.nodes
-
     const list = [];
-
     nodes.forEach(node => {
-        if(nodos[rutaCritica].predecesores != []){
-            list.push(recorrido(nodos,nodos[rutaCritica].predecesores.id))
-        }else{
-            return nodos[rutaCritica].edge;
+        if(nodos[node.id].predecesores != []){
+
         }
-
-
     });
-    return list;
 }
 function pintares(mst){
     const color = "green";

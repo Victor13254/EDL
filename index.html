@@ -90,11 +90,14 @@
         <label>------------</label>
         <label>------------</label>
         <label></label><label></label><label></label><label></label>
-        <label style="width: 100%;">Kruskal</label>
+        <label style="width: 100%;">Dijkstra</label>
         <label></label><label></label><label></label><label></label>
-      </div>
-      <div>
-        <button onclick="kruskalMST()">Dibujar</button>
+        <label for="nodoI">Origen: </label>
+        <select id="nodoI"></select>
+        <label for="nodoF">Destino:</label>
+        <select id="nodoF"></select>
+        <label></label>
+        <button onclick="dijkstra()">Dibujar</button>
       </div>
       <div>
         <label></label><label></label><label></label><label></label>
@@ -146,6 +149,7 @@
     <script src="Adyase.js"></script>
     <script src="Incide.js"></script>
     <script src="Ruta.js"></script>
+    <script src="Dijkstra.js"></script>
 
   </body>
 

@@ -46,7 +46,7 @@ network.on("click", function (params) {
     }
 });
 nodos.on("remove", function(event, properties, senderId) {
-    actualizarSelect();
+    actualizarSelect();actualizarSelect2();
 });
 
 function agregarNodo() {
@@ -55,7 +55,7 @@ function agregarNodo() {
     var costo = document.getElementById("costoNodo").value;
     var id = nodos.length + 1;
     nodos.add({ id: id, label: nombre, duracion: duracion, costo: costo, title: "Costo: " + costo + "\nDuración: " + duracion});
-    actualizarSelect();
+    actualizarSelect();actualizarSelect2();
 }
 
 function eliminarNodo() {
@@ -92,6 +92,23 @@ function actualizarSelect() {
         option2.value = nodos.get(i + 1).id;
         option2.text = nodos.get(i + 1).label;
         selectDestino.appendChild(option2);
+    }
+}
+
+function actualizarSelect2() {
+    var selectI = document.getElementById("nodoI");
+    var selectF = document.getElementById("nodoF");
+    selectI.innerHTML = "";
+    selectF.innerHTML = "";
+    for (var i = 0; i < nodos.length; i++) {
+        var option = document.createElement("option");
+        option.value = nodos.get(i + 1).id;
+        option.text = nodos.get(i + 1).label;
+        selectI.appendChild(option);
+        var option2 = document.createElement("option");
+        option2.value = nodos.get(i + 1).id;
+        option2.text = nodos.get(i + 1).label;
+        selectF.appendChild(option2);
     }
 }
 
