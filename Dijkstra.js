@@ -86,7 +86,7 @@ function pintaris(mst){
     const nodos = data.nodes.get();
 
     nodos.forEach((ip)=>{
-        ids.push((nodos[i].id)-1);
+        ids.push(parseInt(mst[i]));
         i++;
     });
 
